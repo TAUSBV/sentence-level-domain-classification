@@ -1,15 +1,12 @@
+import glob
 import stanza
-from argparse import ArgumentParser
 from utils import read_file, write_lines_to_file
 
 
-def main(filename, outfilename):
+def main(filename, nlp, outfilename):
 
     # read data
     lines = read_file(filename)
-
-    # create Stanza pipeline using the default model package
-    nlp = stanza.Pipeline("en", processors="tokenize")
 
     sentences = list()
 
@@ -28,9 +25,11 @@ def main(filename, outfilename):
 
 if __name__ == "__main__":
 
-    parser = ArgumentParser()
-    parser.add_argument("-in", "--infile")
-    parser.add_argument("-out", "--outfile")
-    args = parser.parse_args()
+    # create Stanza pipeline using the default model package
+    nlp = stanza.Pipeline("en", processors="tokenize")
 
-    main(args.infile, args.outfile)
+    # filepath is hard coded !
+    for filename in glob.glob("bbc/*/*.txt"):
+        print(filename)
+        outfile = filename.replace(".txt", ".sents")
+        main(filename, nlp, outfile)
