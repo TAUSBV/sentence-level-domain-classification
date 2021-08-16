@@ -1,5 +1,6 @@
 import glob
 import stanza
+import sys
 from utils import read_file, write_lines_to_file
 
 
@@ -28,8 +29,9 @@ if __name__ == "__main__":
     # create Stanza pipeline using the default model package
     nlp = stanza.Pipeline("en", processors="tokenize")
 
-    # filepath is hard coded !
-    for filename in glob.glob("bbc/*/*.txt"):
+    pattern = sys.argv[1]  # glob pattern for accessing files
+
+    for filename in glob.glob(pattern):
         print(filename)
         outfile = filename.replace(".txt", ".sents")
         main(filename, nlp, outfile)
