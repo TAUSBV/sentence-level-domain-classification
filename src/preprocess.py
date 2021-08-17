@@ -32,6 +32,11 @@ if __name__ == "__main__":
     pattern = sys.argv[1]  # glob pattern for accessing files
 
     for filename in glob.glob(pattern):
-        print(filename)
-        outfile = filename.replace(".txt", ".sents")
-        main(filename, nlp, outfile)
+        # some files will give UnicodeDecodeError - we can skip them this way
+        try:
+            print(filename)
+            outfile = filename.replace(".txt", ".sents")
+            main(filename, nlp, outfile)
+        except:
+            print(filename, "COULD NOT BE PROCESSED")
+            pass
