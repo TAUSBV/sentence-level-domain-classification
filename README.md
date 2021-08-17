@@ -129,7 +129,7 @@ predictions = le.inverse_transform(predictions)
 report = classification_report(y_test, predictions)
 ```
 
-We can see that in terms of [precision, recall, and accuracy](https://datagroomr.com/precision-recall-and-f1-explained-in-plain-english/) our model performs rather well despite its relative simplicity. Sentences can sometimes be notoriously difficult to categorize (for example, what would you say is the domain of the sentence *I really appreciate all your help*?), which makes the performance of this model all the more impressive.
+We can see that in terms of [precision, recall, and accuracy](https://datagroomr.com/precision-recall-and-f1-explained-in-plain-english/) our model performs rather well despite its relative simplicity. Sentences can sometimes be notoriously difficult to categorize (for example, what would you say is the domain of the sentence *It’s not good, but it is very understandable* ?), which makes the performance of this model all the more impressive.
 
 |               | precision | recall | f1-score |
 | ------------- | --------- | ------ | -------- |
