@@ -1,7 +1,7 @@
 # sentence-level-domain-classification
 Sentence-level domain classification with a feedforward neural network
 
-NOTE: This repository is intended as a companion to the **Tutorial** section of the article [Domain Classification with Natural Language Processing](https://www.taus.net) as published on the [TAUS blog](https://blog.taus.net).
+NOTE: This repository is intended as a companion to the **Tutorial** section of the article [Domain Classification with Natural Language Processing](https://blog.taus.net/domain-classification-with-natural-language-processing) as published on the [TAUS blog](https://blog.taus.net).
 
 ## Overview
 
