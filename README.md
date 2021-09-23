@@ -29,7 +29,7 @@ The BBC News Classification data set is a collection of 2225 English-language ne
 
 We use [Stanza](https://stanfordnlp.github.io/stanza/index.html) to split each document in the data set into sentences. The algorithm is trained to identify sentence boundaries in text and split the contents of a file accordingly. Run ``` python src/preprocess.py "bbc/*/*.txt" ``` to split all documents in the data set into sentences. Make sure that you have downloaded the BBC data set and that it is located in a folder called ``` bbc ``` in the root directory - otherwise, this script is not going to work. Once the sentence splitter is running, it may take up to a few minutes for it to process all the files.
 
-When this is finished, we can run ``` python src/classify.py ``` to perform the next preprocessing steps and then later the classification itself. First, we create the data set by loading the sentences and connecting them to their original labels based on which BBC folder they can be found in:
+When this is finished, we can run ``` python src/main.py ``` to perform the next preprocessing steps and then later the classification itself. First, we create the data set by loading the sentences and connecting them to their original labels based on which BBC folder they can be found in:
 
 ```
 from utils import create_dataset
